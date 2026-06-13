@@ -133,7 +133,7 @@ const PARSED_INITIAL_WARGA: Warga[] = [
     tanggalInput: "2026-01-10",
   },
 
-  // RW 01 (Pak Ahmad's residents)
+  // RW 013
   {
     id: 4,
     nik: "3374121402750001",
@@ -209,7 +209,7 @@ const PARSED_INITIAL_WARGA: Warga[] = [
     tanggalInput: "2026-01-20",
   },
 
-  // RW 13
+  // RW 15
   {
     id: 8,
     nik: "3374121111880001",
@@ -342,7 +342,7 @@ const INITIAL_PENGAJUAN: Pengajuan[] = [
 const INITIAL_LAPORAN: Laporan[] = [
   {
     id: 1,
-    rwId: "RW 03",
+    rwId: "RW 08",
     wargaId: 1,
     kategori: "Kegiatan",
     deskripsi: "RW 03 bersinergi menggelar kerja bakti minggu pagi guna membersihkan bahu jalan dan selokan air menjelang musim hujan.",
@@ -353,7 +353,7 @@ const INITIAL_LAPORAN: Laporan[] = [
   },
   {
     id: 2,
-    rwId: "RW 02",
+    rwId: "RW 07",
     wargaId: 6,
     kategori: "Pengaduan",
     deskripsi: "Melaporkan titik ambles di jalur perbatasan RT 02 RW 02 akibat truk muatan pasir. Mengancam keselamatan warga.",
