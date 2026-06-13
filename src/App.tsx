@@ -534,12 +534,12 @@ export default function App() {
         <div className="flex items-center gap-2">
           <span className="inline-flex px-1.5 py-0.5 rounded bg-emerald-500 font-bold text-slate-900 text-[10px]">DEVEL_MODE</span>
           <p className="text-slate-300">
-            Gunakan selektor di samping untuk mensimulasikan peran otorisasi dwi-fungsi: <span className="font-semibold text-white">Kepala Dusun (Admin)</span> vs <span className="font-semibold text-white">Ketua RW 01-05 (User)</span>.
+            Gunakan selektor di samping untuk mengganti peran otorisasi dwi-fungsi: <span className="font-semibold text-white">Kepala Dusun (Admin)</span> dan <span className="font-semibold text-white">Ketua RW  (User)</span>.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-slate-400 font-medium">Beralih Peran Simulasi:</span>
+          <span className="text-slate-400 font-medium">Ganti Akun:</span>
           <select
             value={currentUser.id}
             onChange={(e) => handleUserSwitch(e.target.value)}
@@ -762,7 +762,7 @@ export default function App() {
                   <span className="text-[10px] font-bold tracking-widest text-emerald-300 uppercase block">DUSUN III ADMINISTRASI</span>
                   <h2 className="text-2xl font-bold text-white font-display">Selamat datang kembali, {currentUser.nama}!</h2>
                   <p className="text-sm text-emerald-200 mt-1 leading-relaxed">
-                    Sistem audit kependudukan dan transparansi keuangan wilayah RW. Pantau semua peristiwa LAMPID serta pengajuan bansos warga dalam satu antarmuka terenkripsi.
+                    Sistem kependudukan dan kondisi wilayah RW. Pantau semua peristiwa LAMPID serta pengajuan warga dalam satu antarmuka terenkripsi.
                   </p>
                 </div>
 
@@ -887,7 +887,7 @@ export default function App() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-white">Konfirmasi Hak Akses</h3>
-                <p className="text-[10px] text-slate-400">Otorisasi simulasi berganti peran</p>
+                <p className="text-[10px] text-slate-400">Otorisasi akun berganti peran</p>
               </div>
             </div>
 
