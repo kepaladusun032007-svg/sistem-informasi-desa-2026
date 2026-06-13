@@ -211,7 +211,7 @@ export default function App() {
       const user = SIMULATED_USERS.find(u => u.id === savedUserId);
       if (user) return "Selamat Datang kembali. Anda masuk sebagai: " + user.nama + " (" + user.role + ")";
     }
-    return "Selamat Datang di Portal Administrasi Dusun II Desa Suci. Silakan masuk untuk mengelola sistem.";
+    return "Selamat Datang di Portal Administrasi Dusun III Desa Suci. Silakan masuk untuk mengelola sistem.";
   });
 
   const triggerNotification = (msg: string) => {
@@ -403,8 +403,8 @@ export default function App() {
             <div className="inline-flex h-12 w-12 bg-emerald-600/20 text-emerald-400 rounded-xl items-center justify-center border border-emerald-500/30 shadow-inner">
               <Lock className="w-6 h-6 animate-pulse" />
             </div>
-            <h2 className="text-xl font-bold text-white tracking-tight font-display">Portal Administrasi Dusun</h2>
-            <p className="text-xs text-slate-400">Sistem Informasi, Mutasi LAMPID & Kas Iuran Sukamaju</p>
+            <h2 className="text-xl font-bold text-white tracking-tight font-display">Portal Administrasi Dusun III</h2>
+            <p className="text-xs text-slate-400">Sistem Informasi, Mutasi LAMPID & Kas Iuran RW </p>
           </div>
 
           <form onSubmit={handleLoginSubmit} className="space-y-4 relative z-10">
@@ -586,7 +586,7 @@ export default function App() {
                 DS
               </div>
               <div>
-                <h1 className="text-sm font-semibold tracking-wide text-white font-display">Dusun Sukamaju</h1>
+                <h1 className="text-sm font-semibold tracking-wide text-white font-display">Dusun III Desa Suci</h1>
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] text-slate-500 uppercase font-mono tracking-wider">Dashboard Administrasi</span>
                   <span className={`inline-block w-1.5 h-1.5 rounded-full ${firebaseInitialized ? "bg-emerald-500 animate-pulse" : "bg-amber-500 animate-bounce"}`} title={firebaseInitialized ? "Firebase Cloud Tersinkron" : "Inisialisasi Firebase..."}></span>
@@ -759,10 +759,10 @@ export default function App() {
               {/* Profile sub-header panel */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-emerald-950 text-emerald-100 p-6 rounded-2xl shadow-sm border border-emerald-800">
                 <div className="md:col-span-2 space-y-1">
-                  <span className="text-[10px] font-bold tracking-widest text-emerald-300 uppercase block">DUSUN SUKAMAJU ADMINISTRASI</span>
+                  <span className="text-[10px] font-bold tracking-widest text-emerald-300 uppercase block">DUSUN III ADMINISTRASI</span>
                   <h2 className="text-2xl font-bold text-white font-display">Selamat datang kembali, {currentUser.nama}!</h2>
                   <p className="text-sm text-emerald-200 mt-1 leading-relaxed">
-                    Sistem audit kependudukan dan transparansi keuangan 5 wilayah RW. Pantau semua peristiwa LAMPID serta pengajuan bansos warga dalam satu antarmuka terenkripsi.
+                    Sistem audit kependudukan dan transparansi keuangan wilayah RW. Pantau semua peristiwa LAMPID serta pengajuan bansos warga dalam satu antarmuka terenkripsi.
                   </p>
                 </div>
 
