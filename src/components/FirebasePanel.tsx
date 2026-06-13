@@ -194,7 +194,7 @@ export default function FirebasePanel({ db, setDb, triggerNotification, firebase
           <div className="space-y-4 text-xs font-mono">
             <div className="space-y-1">
               <span className="text-slate-500 text-3xs uppercase tracking-wider block">Firebase Project ID</span>
-              <span className="text-amber-400 block break-all font-semibold selection:bg-slate-800">aplikasi-management-dusun</span>
+              <span className="text-amber-400 block break-all font-semibold selection:bg-slate-800">rich-gecko-q8gvj</span>
             </div>
 
             <div className="space-y-1">
