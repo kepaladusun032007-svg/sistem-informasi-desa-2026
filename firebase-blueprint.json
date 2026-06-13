@@ -1,0 +1,212 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User accounts for RW or Admin login.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "nama": { "type": "string" },
+        "role": { "type": "string", "enum": ["Admin", "User"] },
+        "rwId": { "type": "string" },
+        "password": { "type": "string" }
+      },
+      "required": ["id", "username", "nama", "role"]
+    },
+    "Warga": {
+      "title": "Warga",
+      "description": "Resident details.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "nik": { "type": "string" },
+        "kk": { "type": "string" },
+        "nama": { "type": "string" },
+        "tempatLahir": { "type": "string" },
+        "tanggalLahir": { "type": "string" },
+        "jk": { "type": "string", "enum": ["L", "P"] },
+        "agama": { "type": "string" },
+        "pendidikan": { "type": "string" },
+        "pekerjaan": { "type": "string" },
+        "hubungan": { "type": "string" },
+        "alamat": { "type": "string" },
+        "kontak": { "type": "string" },
+        "rwId": { "type": "string" },
+        "status": { "type": "string", "enum": ["Aktif", "Meninggal", "Pindah", "Sementara"] },
+        "foto": { "type": "string" },
+        "catatan": { "type": "string" },
+        "tanggalInput": { "type": "string" }
+      },
+      "required": ["id", "nik", "kk", "nama", "jk", "rwId", "status", "tanggalInput"]
+    },
+    "RW": {
+      "title": "RW",
+      "description": "Rukun Warga details.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "namaKetua": { "type": "string" },
+        "wilayah": { "type": "string" },
+        "kontak": { "type": "string" }
+      },
+      "required": ["id", "namaKetua", "wilayah", "kontak"]
+    },
+    "Iuran": {
+      "title": "Iuran",
+      "description": "Monthly dues records.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "wargaId": { "type": "number" },
+        "bulanTahun": { "type": "string" },
+        "jumlah": { "type": "number" },
+        "totalDibayar": { "type": "number" },
+        "statusBayar": { "type": "string", "enum": ["Lunas", "Kurang", "Belum Bayar"] }
+      },
+      "required": ["id", "wargaId", "bulanTahun", "jumlah", "totalDibayar", "statusBayar"]
+    },
+    "TransaksiIuran": {
+      "title": "TransaksiIuran",
+      "description": "Dues transaction records.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "iuranId": { "type": "number" },
+        "wargaId": { "type": "number" },
+        "tanggal": { "type": "string" },
+        "jenis": { "type": "string", "enum": ["Masuk", "Keluar"] },
+        "jumlah": { "type": "number" },
+        "keterangan": { "type": "string" }
+      },
+      "required": ["id", "iuranId", "wargaId", "tanggal", "jenis", "jumlah", "keterangan"]
+    },
+    "Pengajuan": {
+      "title": "Pengajuan",
+      "description": "Social assistance or infrastructure requests.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "wargaId": { "type": "number" },
+        "rwId": { "type": "string" },
+        "jenis": { "type": "string", "enum": ["Rutilahu", "Pembangunan", "Bansos"] },
+        "deskripsi": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "status": { "type": "string", "enum": ["Draft", "Kirim", "Verifikasi", "Setuju", "Tolak"] },
+        "fotoList": { "type": "array" },
+        "komentar": { "type": "string" }
+      },
+      "required": ["id", "wargaId", "rwId", "jenis", "deskripsi", "tanggal", "status", "fotoList"]
+    },
+    "Laporan": {
+      "title": "Laporan",
+      "description": "Resident complaints or activity reports.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "rwId": { "type": "string" },
+        "wargaId": { "type": "number" },
+        "kategori": { "type": "string", "enum": ["Kegiatan", "Kejadian", "Pengaduan"] },
+        "deskripsi": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "fotoList": { "type": "array" },
+        "status": { "type": "string", "enum": ["Diproses", "Selesai", "Arsip"] },
+        "komentarAdmin": { "type": "string" }
+      },
+      "required": ["id", "rwId", "kategori", "deskripsi", "tanggal", "fotoList", "status"]
+    },
+    "MutasiLog": {
+      "title": "MutasiLog",
+      "description": "Logs of citizen demographic changes.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "wargaId": { "type": "number" },
+        "namaWarga": { "type": "string" },
+        "nik": { "type": "string" },
+        "kk": { "type": "string" },
+        "jenis": { "type": "string", "enum": ["Lahir", "Meninggal", "Pindah Masuk", "Pindah Keluar", "Penduduk Sementara"] },
+        "tanggalPeristiwa": { "type": "string" },
+        "keterangan": { "type": "string" },
+        "petugasName": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "wargaId", "namaWarga", "nik", "kk", "jenis", "tanggalPeristiwa", "keterangan", "petugasName", "timestamp"]
+    },
+    "JadwalRonda": {
+      "title": "JadwalRonda",
+      "description": "Night watch schedules.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "rwId": { "type": "string" },
+        "hari": { "type": "string", "enum": ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"] },
+        "wargaIds": { "type": "array" },
+        "lokasiSektor": { "type": "string" },
+        "jamMulai": { "type": "string" },
+        "jamSelesai": { "type": "string" },
+        "keterangan": { "type": "string" }
+      },
+      "required": ["id", "rwId", "hari", "wargaIds", "lokasiSektor", "jamMulai", "jamSelesai"]
+    },
+    "KegiatanRutin": {
+      "title": "KegiatanRutin",
+      "description": "Routine neighborhood agenda / activities.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "number" },
+        "rwId": { "type": "string" },
+        "nama": { "type": "string" },
+        "kategori": { "type": "string", "enum": ["Kesehatan", "Keagamaan", "Gotong Royong", "Sosial", "Rapat / Musyawarah"] },
+        "frekuensi": { "type": "string" },
+        "lokasi": { "type": "string" },
+        "waktu": { "type": "string" },
+        "penanggungJawab": { "type": "string" },
+        "deskripsi": { "type": "string" }
+      },
+      "required": ["id", "rwId", "nama", "kategori", "frekuensi", "lokasi", "waktu", "penanggungJawab", "deskripsi"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "Simulated and actual login accounts."
+    },
+    "warga": {
+      "schema": { "$ref": "#/entities/Warga" },
+      "description": "Resident profiles of the village."
+    },
+    "rws": {
+      "schema": { "$ref": "#/entities/RW" },
+      "description": "RW administrator descriptions."
+    },
+    "iuran": {
+      "schema": { "$ref": "#/entities/Iuran" },
+      "description": "Citizen monthly mandatory fee targets."
+    },
+    "transaksi": {
+      "schema": { "$ref": "#/entities/TransaksiIuran" },
+      "description": "Payment logs for dues and other community bank book entries."
+    },
+    "pengajuan": {
+      "schema": { "$ref": "#/entities/Pengajuan" },
+      "description": "Assistance submissions (Bansos, Rutilahu, etc.)."
+    },
+    "laporan": {
+      "schema": { "$ref": "#/entities/Laporan" },
+      "description": "Routine activities reports and resident complaints."
+    },
+    "mutasi": {
+      "schema": { "$ref": "#/entities/MutasiLog" },
+      "description": "Village population demographic events (migration and life stats)."
+    },
+    "ronda": {
+      "schema": { "$ref": "#/entities/JadwalRonda" },
+      "description": "Night patrol rota."
+    },
+    "kegiatan": {
+      "schema": { "$ref": "#/entities/KegiatanRutin" },
+      "description": "Recurring posyandu, gotong royong, as well as general agendas."
+    }
+  }
+}

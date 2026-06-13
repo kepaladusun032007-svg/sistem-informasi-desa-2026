@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global default-deny catch-all rule
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Rule for the 'users' collection
+    match /users/{userId} {
+      allow read, write: if true; // Always allow reading and writing user accounts for simple simulation
+    }
+
+    // Rule for the 'warga' collection
+    match /warga/{wargaId} {
+      allow read, write: if true; // Broad layout access to facilitate instant community review
+    }
+
+    // Rule for the 'rws' collection
+    match /rws/{rwId} {
+      allow read, write: if true;
+    }
+
+    // Rule for the 'iuran' collection
+    match /iuran/{iuranId} {
+      allow read, write: if true;
+    }
+
+    // Rule for the 'transaksi' collection
+    match /transaksi/{transaksiId} {
+      allow read, write: if true;
+    }
+
+    // Rule for the 'pengajuan' collection
+    match /pengajuan/{pengajuanId} {
+      allow read, write: if true;
+    }
+
+    // Rule for the 'laporan' collection
+    match /laporan/{laporanId} {
+      allow read, write: if true;
+    }
+
+    // Rule for the 'mutasi' collection
+    match /mutasi/{mutasiId} {
+      allow read, write: if true;
+    }
+
+    // Rule for the 'ronda' collection
+    match /ronda/{rondaId} {
+      allow read, write: if true;
+    }
+
+    // Rule for the 'kegiatan' collection
+    match /kegiatan/{kegiatanId} {
+      allow read, write: if true;
+    }
+  }
+}
