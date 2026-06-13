@@ -22,7 +22,7 @@ export default function ProfilRwPanel({
 }: ProfilRwPanelProps) {
   // If Admin, they can select which RW profile to study. If User, they are locked to their own.
   const [selectedRwId, setSelectedRwId] = useState<string>(
-    currentUser.role === "User" ? currentUser.rwId || "RW 03" : "RW 03"
+    currentUser.role === "User" ? currentUser.rwId || "RW 07" : "RW 07"
   );
 
   const activeRw = rws.find(r => r.id === selectedRwId) || rws[0];
@@ -103,7 +103,7 @@ export default function ProfilRwPanel({
             </div>
             <div>
               <h3 className="font-bold text-slate-800 font-display text-base">Wilayah {activeRw.id}</h3>
-              <p className="text-3xs font-mono font-bold text-slate-405 uppercase tracking-wide">Dusun II</p>
+              <p className="text-3xs font-mono font-bold text-slate-405 uppercase tracking-wide">Dusun III</p>
             </div>
           </div>
 
