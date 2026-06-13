@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Warga, RW, Iuran, TransaksiIuran, Pengajuan, Laporan, MutasiLog, User, JadwalRonda, KegiatanRutin } from "./types";
+import { Warga, RWS, Iuran, TransaksiIuran, Pengajuan, Laporan, MutasiLog, User, JadwalRonda, KegiatanRutin } from "./types";
 
 // Setup initial preloaded accounts
 export const SIMULATED_USERS: User[] = [
