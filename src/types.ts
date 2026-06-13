@@ -32,7 +32,7 @@ export interface Warga {
   hubungan: string; // "Kepala Keluarga", "Suami", "Istri", "Anak", "Orang Tua", "Mertua", "Lainnya"
   alamat: string;
   kontak: string;
-  rwId: string; // "RW 01" to "RW 05"
+  rwId: string; // "RW 07" to "RW 17"
   status: WargaStatus;
   foto?: string; // Base64 or image URL placeholder
   catatan?: string;
@@ -40,7 +40,7 @@ export interface Warga {
 }
 
 export interface RW {
-  id: string; // "RW 01" - "RW 05"
+  id: string; // "RW 07" - "RW 17"
   namaKetua: string;
   wilayah: string;
   kontak: string;
