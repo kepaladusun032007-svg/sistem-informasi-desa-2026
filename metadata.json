@@ -1,6 +1,6 @@
 {
   "name": "Administrasi Dusun",
-  "description": "Aplikasi administrasi kependudukan, iuran keuangan RW, pengajuan bansos, dan pelaporan kegiatan warga Dusun Sukamaju.",
+  "description": "Aplikasi administrasi kependudukan, iuran keuangan RW, pengajuan dan pelaporan kegiatan warga Dusun III Desa Suci.",
   "requestFramePermissions": [
     "camera"
   ],
