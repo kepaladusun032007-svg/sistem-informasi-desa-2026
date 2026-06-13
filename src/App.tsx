@@ -211,7 +211,7 @@ export default function App() {
       const user = SIMULATED_USERS.find(u => u.id === savedUserId);
       if (user) return "Selamat Datang kembali. Anda masuk sebagai: " + user.nama + " (" + user.role + ")";
     }
-    return "Selamat Datang di Portal Administrasi Dusun Sukamaju. Silakan masuk untuk mengelola sistem.";
+    return "Selamat Datang di Portal Administrasi Dusun II Desa Suci. Silakan masuk untuk mengelola sistem.";
   });
 
   const triggerNotification = (msg: string) => {
