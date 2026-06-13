@@ -103,7 +103,7 @@ export default function ProfilRwPanel({
             </div>
             <div>
               <h3 className="font-bold text-slate-800 font-display text-base">Wilayah {activeRw.id}</h3>
-              <p className="text-3xs font-mono font-bold text-slate-405 uppercase tracking-wide">Dusun Sukamaju</p>
+              <p className="text-3xs font-mono font-bold text-slate-405 uppercase tracking-wide">Dusun II</p>
             </div>
           </div>
 
