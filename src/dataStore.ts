@@ -77,7 +77,7 @@ export const PRESET_PHOTOS = {
 
 // Seed Warga
 const PARSED_INITIAL_WARGA: Warga[] = [
-  // RW 03 (Ibu Siti Aminah is Ketua)
+  // RW 07
   {
     id: 1,
     nik: "3374121205800001",
@@ -171,7 +171,7 @@ const PARSED_INITIAL_WARGA: Warga[] = [
     tanggalInput: "2026-02-15",
   },
 
-  // RW 02 (Ibu Ratna's residents - one needy family for social assistance demo)
+  // RW 08
   {
     id: 6,
     nik: "3374121804600001",
@@ -209,7 +209,7 @@ const PARSED_INITIAL_WARGA: Warga[] = [
     tanggalInput: "2026-01-20",
   },
 
-  // RW 04 (Pak Bambang status)
+  // RW 13
   {
     id: 8,
     nik: "3374121111880001",
@@ -229,7 +229,7 @@ const PARSED_INITIAL_WARGA: Warga[] = [
     tanggalInput: "2026-01-25",
   },
   
-  // RW 05 (Ibu Dewi status)
+  // RW 07
   {
     id: 9,
     nik: "3374120202920002",
